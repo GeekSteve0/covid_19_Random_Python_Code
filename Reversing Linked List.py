@@ -7,20 +7,37 @@ def reverse_linked_list_with_stack(head):
     stack = []
     current = head
 
+
+
     while current is not None:
         stack.append(current)
-        current = current.next_node
+        print(current.data)
 
+        current = current.next_node
+    print ("+++++++++++++")
+    print("before_first_pop")
+    print(len(stack))
     new_head = stack.pop() if stack else None
+    print(len(stack))
     current = new_head
+    print(current.data)
+    print(current.next_node)
+    print ("^^^^^^^^^^^^^^^^^^^^^^^^")
 
     while stack:
-        current.next_node = stack.pop()
-        current = current.next_node
+        next=stack.pop()
+        print(len(stack))
+        print(next.data)
 
+        current.next_node = next
+
+        current = next
+    print("===========================")
     if current:
+        print(current.next_node.data)
         current.next_node = None
-
+        print(current.next_node)
+    print("&&&&&&&&&&")
     return new_head
 
 # Creating a linked list
